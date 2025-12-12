@@ -1,0 +1,77 @@
+---
+const repos = [
+    {
+        name: 'pyVat',
+        description: 'Python library for validating European VAT formats.',
+        language: 'Python',
+        stars: '120+',
+        url: 'https://github.com/agilegeeks/pyVat' // Hypothetical URL
+    },
+    {
+        name: 'eurid-epp-php',
+        description: 'Connecting with the EURid registry.',
+        language: 'PHP',
+        stars: '85',
+        url: 'https://github.com/agilegeeks/eurid-epp-php' // Hypothetical URL
+    },
+    {
+        name: 'paypal-ipn-endpoint',
+        description: 'Testing tools for seamless payment integration.',
+        language: 'Tools',
+        stars: '45',
+        url: 'https://github.com/agilegeeks/paypal-ipn-endpoint' // Hypothetical URL
+    }
+];
+---
+<section id="opensource" class="py-24 bg-background relative overflow-hidden">
+    <!-- Matrix/Terminal background effect hint -->
+    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#22c55e 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold font-mono mb-4 text-white">
+                <span class="text-primary">&gt;</span> Built by Geeks, Shared with the World_
+            </h2>
+            <p class="text-muted max-w-2xl mx-auto">
+                We believe in the power of community. Our team actively maintains open-source libraries used by developers worldwide.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {repos.map((repo) => (
+                <a href={repo.url} target="_blank" rel="noopener noreferrer" class="block group">
+                    <div class="h-full bg-[#0f172a] border border-slate-700 p-6 rounded-lg font-mono hover:border-primary transition-colors relative overflow-hidden">
+
+                        <!-- Header -->
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-lg font-bold text-primary group-hover:underline">{repo.name}</h3>
+                            <div class="flex items-center space-x-1 text-xs text-slate-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                </svg>
+                                <span>{repo.stars}</span>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-sm text-slate-300 mb-6 min-h-[3rem]">
+                            {repo.description}
+                        </p>
+
+                        <!-- Footer -->
+                        <div class="flex items-center text-xs text-slate-500">
+                            <span class="w-2 h-2 rounded-full bg-primary mr-2"></span>
+                            {repo.language}
+                        </div>
+                    </div>
+                </a>
+            ))}
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="https://github.com/agilegeeks" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-mono text-muted hover:text-white transition-colors">
+                View all repositories on GitHub <span class="ml-2">→</span>
+            </a>
+        </div>
+    </div>
+</section>
